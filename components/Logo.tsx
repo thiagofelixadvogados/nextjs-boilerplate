@@ -1,42 +1,44 @@
 import Link from "next/link";
 
 export function LogoMark({ className = "" }: { className?: string }) {
-  // Abstract "flow / rising capital" mark — no scales of justice, no law-office vibe.
+  // Premium "FP" monogram with an upward-flow accent — financial-institution feel.
+  // No scales of justice, no law-office vibe.
   return (
-    <svg
-      viewBox="0 0 40 40"
-      className={className}
-      fill="none"
-      aria-hidden
-    >
+    <svg viewBox="0 0 44 44" className={className} fill="none" aria-hidden>
       <defs>
-        <linearGradient id="fp-gold" x1="0" y1="0" x2="40" y2="40">
+        <linearGradient id="fp-gold" x1="6" y1="6" x2="38" y2="38">
           <stop offset="0" stopColor="#e7cd8a" />
-          <stop offset="1" stopColor="#c79a3c" />
+          <stop offset="0.5" stopColor="#d9b35c" />
+          <stop offset="1" stopColor="#b88a2b" />
+        </linearGradient>
+        <linearGradient id="fp-navy" x1="0" y1="0" x2="44" y2="44">
+          <stop offset="0" stopColor="#122451" />
+          <stop offset="1" stopColor="#0a1124" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="11" fill="#0d1b3a" />
-      {/* upward flow streams */}
+      <rect width="44" height="44" rx="12" fill="url(#fp-navy)" />
+      {/* fine gold inset border */}
+      <rect x="3.5" y="3.5" width="37" height="37" rx="9.5" stroke="url(#fp-gold)" strokeOpacity="0.45" strokeWidth="1" />
+      {/* serif FP monogram */}
+      <text
+        x="22"
+        y="30.5"
+        textAnchor="middle"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="22"
+        fontWeight="600"
+        letterSpacing="-1"
+        fill="url(#fp-gold)"
+      >
+        FP
+      </text>
+      {/* upward-flow accent underline */}
       <path
-        d="M9 27c4 0 5-3 8-6.5S23 13 31 13"
+        d="M12 34.5c5 0 7-2.4 10-2.4s5 2.4 10 2.4"
         stroke="url(#fp-gold)"
-        strokeWidth="2.4"
+        strokeWidth="1.6"
         strokeLinecap="round"
-      />
-      <path
-        d="M9 31c5.5 0 7-4 10.5-8S25 16 31 16"
-        stroke="url(#fp-gold)"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        opacity="0.55"
-      />
-      {/* arrow tip */}
-      <path
-        d="M26 11.5h6v6"
-        stroke="url(#fp-gold)"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        opacity="0.85"
       />
     </svg>
   );
