@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fluxo Prime Fomento S/A — Plataforma de Factoring (protótipo funcional)
 
-## Getting Started
+Aplicação web institucional **+ portal do cliente + área administrativa** para uma
+factoring premium (fomento mercantil / antecipação de recebíveis), construída em
+**Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS v4**.
 
-First, run the development server:
+> ⚠️ **Ambiente demonstrativo.** Todos os dados são simulados e persistidos no
+> `localStorage` do navegador. Não há backend, não há movimentação financeira real
+> e nenhum dado pessoal real deve ser inserido. Factoring **não é** empréstimo,
+> financiamento bancário nem investimento.
+
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build de produção: `npm run build && npm start`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Acessos de demonstração
 
-## Learn More
+| Perfil  | E-mail                  | Senha       |
+| ------- | ----------------------- | ----------- |
+| Cliente | `cliente@empresa.com`   | `cliente123`|
+| Admin   | `admin@fluxoprime.com`  | `admin123`  |
 
-To learn more about Next.js, take a look at the following resources:
+Você também pode criar um novo cadastro de cliente em **/cadastro** (multi-etapas).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## O que tem na aplicação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Site institucional (público)**
+`/` Home · `/factoring` O que é Factoring · `/como-funciona` · `/solucoes` ·
+`/beneficios` · `/estrutura` · `/securitizadora` · `/contato` · `/compliance` ·
+`/privacidade` · `/termos` · página 404.
 
-## Deploy on Vercel
+**Portal do cliente** (`/app/*`, requer login de cliente)
+Dashboard · Simular operação · Enviar títulos · Minhas propostas · Operações ·
+Documentos · Sacados · Relatórios · Atendimento · Perfil.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Área administrativa** (`/admin/*`, requer login de admin)
+Dashboard · Clientes · Análises · Propostas · Operações · Documentos · Sacados ·
+Compliance (KYC/KYB/PLD-FT/LGPD) · Securitizadora (montagem de carteira) ·
+Relatórios · Configurações.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Arquitetura
+
+```
+app/
+  (site)/        páginas públicas + layout (Navbar/Footer)
+  (auth)/        login, cadastro, recuperar-senha + layout split-screen
+  app/           portal do cliente (PortalShell role="client")
+  admin/         área administrativa (PortalShell role="admin")
+components/
+  ui.tsx         design system (Button, Card, Badge, Modal, Table, Field, ...)
+  Logo.tsx       marca textual + ícone abstrato de fluxo
+  site/          Navbar, Footer, Pieces (FAQ, Steps, Hero), LegalPage
+  portal/Shell   sidebar/topbar + guarda de autenticação
+lib/
+  types.ts       tipos de domínio
+  format.ts      BRL/%, máscaras, rótulos/cores de status, simulateFactoring()
+  mockData.ts    seed de demonstração
+  store.tsx      AppProvider (Context + localStorage) + useApp()
+```
+
+## Estado da entrega
+
+**Funcional (já funciona com dados simulados):** navegação completa; cadastro,
+login e logout (cliente e admin) com persistência em `localStorage`; simulador de
+factoring com cálculo demonstrativo de deságio, tarifa, valor líquido e CET; envio
+de títulos gerando propostas; fluxo de status de propostas; aceite de proposta
+gerando operação; cadastro/edição de sacados; central de documentos; relatórios
+com gráficos em CSS; atendimento; edição de perfil; painel admin com mudança de
+status, compliance checklist e montagem de carteira para securitizadora.
+
+**Simulado / mock:** uploads (apenas o nome do arquivo é capturado), e-mails,
+análise de crédito/bureaus, assinatura digital, cobrança e qualquer integração
+externa. Cálculos financeiros são meramente indicativos.
+
+**A integrar depois (backend real):** autenticação e autorização (JWT/OAuth),
+banco de dados, upload seguro de arquivos, consulta de CNPJ/bureaus, assinatura
+digital, motor de crédito/antifraude, cobrança e conciliação bancária.
+
+**Sugestões de evolução:** Supabase ou PostgreSQL + Prisma como banco; Firebase
+Auth/Supabase Auth; storage (S3/Supabase Storage); APIs de Serasa/CND/Receita,
+assinatura (Clicksign/D4Sign), open finance e PIX; v2.0 com notificações,
+multiusuário por empresa, trilha de auditoria e relatórios exportáveis.
