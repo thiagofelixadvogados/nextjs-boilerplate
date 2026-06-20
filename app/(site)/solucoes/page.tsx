@@ -23,7 +23,7 @@ export default function Solucoes() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {solucoes.map((s) => (
-            <Card key={s.t} className="flex flex-col p-6 transition hover:-translate-y-0.5">
+            <Card key={s.t} className="hover-lift flex flex-col p-6">
               <div className="flex items-center justify-between">
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-xl text-gold-300">{s.icon}</span>
                 <Badge tone="gold">{s.tag}</Badge>

@@ -2,22 +2,28 @@
 
 :root {
   /* Brand palette — premium fintech / structured credit */
-  --navy-950: #0a1124;
+  --navy-950: #090f20;
   --navy-900: #0d1b3a;
   --navy-800: #122451;
   --navy-700: #1a3268;
   --navy-600: #24407f;
-  --gold-600: #b88a2b;
+  --gold-600: #b3852a;
   --gold-500: #c79a3c;
   --gold-400: #d9b35c;
-  --gold-300: #e7cd8a;
-  --ink: #0b1220;
-  --paper: #f6f7fb;
-  --muted: #6b7488;
-  --line: #e6e9f2;
+  --gold-300: #ecd49a;
+  --ink: #0c1426;
+  --paper: #f5f7fc;
+  --muted: #69718a;
+  --line: #e7eaf3;
+  --ring: rgba(36, 64, 127, 0.35);
 
   --background: #ffffff;
   --foreground: var(--ink);
+
+  /* Elevation tokens */
+  --shadow-sm: 0 1px 2px rgba(12, 20, 38, 0.05), 0 1px 1px rgba(12, 20, 38, 0.03);
+  --shadow-md: 0 2px 4px rgba(12, 20, 38, 0.04), 0 10px 28px -8px rgba(12, 20, 38, 0.10);
+  --shadow-lg: 0 8px 16px -6px rgba(12, 20, 38, 0.10), 0 22px 48px -12px rgba(12, 20, 38, 0.18);
 }
 
 @theme inline {
@@ -47,11 +53,32 @@
   border-color: var(--line);
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  line-height: 1.55;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+/* Serif display headings — tighter, more elegant rhythm */
+.font-serif {
+  letter-spacing: -0.02em;
+  font-feature-settings: "kern", "liga";
+}
+
+::selection {
+  background: rgba(199, 154, 60, 0.28);
+  color: var(--navy-950);
 }
 
 .text-balance {
@@ -60,32 +87,53 @@ body {
 
 .bg-navy-gradient {
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(199, 154, 60, 0.18), transparent 60%),
-    radial-gradient(900px 500px at -10% 20%, rgba(36, 64, 127, 0.55), transparent 55%),
-    linear-gradient(160deg, var(--navy-950), var(--navy-900) 60%, var(--navy-800));
+    radial-gradient(1100px 520px at 82% -12%, rgba(216, 178, 92, 0.22), transparent 58%),
+    radial-gradient(820px 520px at -8% 8%, rgba(36, 64, 127, 0.6), transparent 55%),
+    radial-gradient(700px 700px at 110% 110%, rgba(26, 50, 104, 0.5), transparent 60%),
+    linear-gradient(155deg, var(--navy-950) 0%, var(--navy-900) 55%, var(--navy-800) 100%);
 }
 
 .gold-text {
-  background: linear-gradient(90deg, var(--gold-300), var(--gold-500));
+  background: linear-gradient(95deg, var(--gold-300), var(--gold-500) 60%, var(--gold-600));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* Hairline divider that reads on both light and dark */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
 .card-shadow {
-  box-shadow: 0 1px 2px rgba(10, 17, 36, 0.04), 0 8px 24px rgba(10, 17, 36, 0.06);
+  box-shadow: var(--shadow-md);
+}
+
+.hover-lift {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
+  will-change: transform;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(199, 154, 60, 0.35);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
 }
 
 @keyframes fluxo-rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -94,17 +142,34 @@ body {
 }
 
 .animate-rise {
-  animation: fluxo-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fluxo-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .hover-lift {
+    animation: none;
+    transition: none;
+  }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9cfdd;
+  background: #cbd2e0;
+  border: 3px solid transparent;
+  background-clip: content-box;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #aeb6c9;
+  background: #aab3c8;
+  background-clip: content-box;
 }
