@@ -3,12 +3,12 @@ import { Card, Button, Disclaimer, SectionTitle } from "@/components/ui";
 
 const fluxo = [
   { t: "Cliente envia títulos", d: "Os recebíveis são enviados pelo portal para análise." },
-  { t: "Fluxo Prime analisa", d: "Originação, análise de crédito do sacado e validação documental." },
+  { t: "New Capital analisa", d: "Originação, análise de crédito do sacado e validação documental." },
   { t: "Carteira é estruturada", d: "Os recebíveis elegíveis são agrupados em uma carteira." },
   { t: "Securitizadora avalia", d: "A parceira analisa elegibilidade, risco e condições de mercado." },
   { t: "Captação ou estruturação", d: "A carteira pode ser convertida em instrumento de captação no mercado de capitais." },
   { t: "Cliente obtém melhores condições", d: "Escala e taxas mais competitivas para novas operações." },
-  { t: "Relacionamento contínuo", d: "A Fluxo Prime mantém a originação e o relacionamento com o cliente." },
+  { t: "Relacionamento contínuo", d: "A New Capital mantém a originação e o relacionamento com o cliente." },
 ];
 
 export default function Securitizadora() {
@@ -17,7 +17,7 @@ export default function Securitizadora() {
       <PageHero
         eyebrow="Parceria com Securitizadora"
         title={<>Escala e taxas competitivas com <span className="gold-text">estruturação de carteiras.</span></>}
-        subtitle="A Fluxo Prime origina, analisa e estrutura carteiras de recebíveis. A parceira securitizadora pode transformá-las em instrumentos de captação junto ao mercado de capitais."
+        subtitle="A New Capital origina, analisa e estrutura carteiras de recebíveis. A parceira securitizadora pode transformá-las em instrumentos de captação junto ao mercado de capitais."
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">

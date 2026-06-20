@@ -78,7 +78,7 @@ export default function Cadastro() {
       banco,
     });
     if (!res.ok) { setError(res.error || "Erro ao cadastrar."); return; }
-    toast("Cadastro criado! Bem-vindo à Fluxo Prime.", "success");
+    toast("Cadastro criado! Bem-vindo à New Capital.", "success");
     router.push("/app/dashboard");
   };
 

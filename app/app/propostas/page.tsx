@@ -172,7 +172,7 @@ export default function Propostas() {
 
             <Disclaimer>
               Valores demonstrativos. O aceite formaliza a cessão do crédito e está
-              sujeito às condições contratuais e à política interna da Fluxo Prime.
+              sujeito às condições contratuais e à política interna da New Capital.
             </Disclaimer>
           </div>
         )}

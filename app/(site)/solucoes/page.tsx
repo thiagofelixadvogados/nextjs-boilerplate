@@ -41,7 +41,7 @@ export default function Solucoes() {
           <Disclaimer>
             A disponibilidade de cada modalidade, especialmente operações sem
             recurso e de exportação, depende de análise de risco, elegibilidade do
-            recebível, perfil do sacado e políticas internas da Fluxo Prime.
+            recebível, perfil do sacado e políticas internas da New Capital.
           </Disclaimer>
         </div>
       </section>

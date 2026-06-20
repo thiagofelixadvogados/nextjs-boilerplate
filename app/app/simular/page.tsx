@@ -167,7 +167,7 @@ export default function Simular() {
           <Disclaimer>
             Simulação meramente indicativa. A aprovação e as condições finais
             dependem de análise cadastral, documental, crédito do sacado, prevenção
-            à fraude e política interna da Fluxo Prime.
+            à fraude e política interna da New Capital.
           </Disclaimer>
         </div>
       </div>

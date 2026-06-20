@@ -10,7 +10,7 @@ export default function Privacidade() {
         {
           h: "Coleta e finalidade dos dados",
           p: [
-            "A Fluxo Prime Fomento S/A coleta e trata dados pessoais e empresariais para finalidades legítimas relacionadas ao fomento mercantil: cadastro, análise de crédito, prevenção à fraude, formalização de operações de aquisição de direitos creditórios, cumprimento de obrigações legais e regulatórias e comunicação com o cliente.",
+            "A New Capital Fomento Mercantil Ltda. coleta e trata dados pessoais e empresariais para finalidades legítimas relacionadas ao fomento mercantil: cadastro, análise de crédito, prevenção à fraude, formalização de operações de aquisição de direitos creditórios, cumprimento de obrigações legais e regulatórias e comunicação com o cliente.",
             "O tratamento observa a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD) e os princípios da finalidade, adequação, necessidade e segurança.",
           ],
         },
@@ -35,7 +35,7 @@ export default function Privacidade() {
         },
         {
           h: "Contato",
-          p: ["Dúvidas sobre privacidade podem ser encaminhadas para privacidade@fluxoprime.com."],
+          p: ["Dúvidas sobre privacidade podem ser encaminhadas para privacidade@newcapital.com."],
         },
       ]}
     />

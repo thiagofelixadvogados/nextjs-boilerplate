@@ -94,7 +94,7 @@ export function seedState(): AppState {
     proposals: [
       {
         id: "prop_1",
-        numero: "FP-2026-0001",
+        numero: "NC-2026-0001",
         clientId: "cli_demo",
         data: "2026-06-02",
         tipoOperacao: "convencional",
@@ -126,7 +126,7 @@ export function seedState(): AppState {
       },
       {
         id: "prop_2",
-        numero: "FP-2026-0002",
+        numero: "NC-2026-0002",
         clientId: "cli_demo",
         data: "2026-06-10",
         tipoOperacao: "sem-recurso",
@@ -155,7 +155,7 @@ export function seedState(): AppState {
       },
       {
         id: "prop_3",
-        numero: "FP-2026-0003",
+        numero: "NC-2026-0003",
         clientId: "cli_demo",
         data: "2026-06-14",
         tipoOperacao: "convencional",
@@ -185,7 +185,7 @@ export function seedState(): AppState {
       },
       {
         id: "prop_4",
-        numero: "FP-2026-0004",
+        numero: "NC-2026-0004",
         clientId: "cli_demo",
         data: "2026-06-15",
         tipoOperacao: "convencional",
@@ -277,7 +277,7 @@ export function seedState(): AppState {
     carteiras: [
       {
         id: "cart_1",
-        nome: "Carteira FP-2026-T1",
+        nome: "Carteira NC-2026-T1",
         operationIds: ["op_1"],
         valorTotal: 120000,
         prazoMedio: 45,

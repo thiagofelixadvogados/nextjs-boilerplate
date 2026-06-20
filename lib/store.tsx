@@ -22,9 +22,9 @@ import type {
 import { seedState } from "./mockData";
 import { uid } from "./format";
 
-const STORAGE_KEY = "fluxoprime_state_v1";
+const STORAGE_KEY = "newcapital_state_v1";
 
-const ADMIN = { email: "admin@fluxoprime.com", password: "admin123" };
+const ADMIN = { email: "admin@newcapital.com", password: "admin123" };
 
 interface ToastMsg {
   id: string;
@@ -166,7 +166,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }));
 
   const addProposal: Ctx["addProposal"] = (p) => {
-    const numero = `FP-2026-${String(state.proposals.length + 1).padStart(4, "0")}`;
+    const numero = `NC-2026-${String(state.proposals.length + 1).padStart(4, "0")}`;
     const today = new Date().toISOString().slice(0, 10);
     const proposal: Proposal = {
       ...p,

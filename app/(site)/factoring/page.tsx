@@ -6,7 +6,7 @@ const faq = [
   { q: "O que é deságio?", a: "É o desconto aplicado sobre o valor de face do título para remunerar a antecipação ao longo do prazo até o vencimento. Quanto maior o prazo e o risco do sacado, maior tende a ser o deságio." },
   { q: "O que é sacado?", a: "É o devedor do título — a empresa ou pessoa que deve pagar a duplicata, nota fiscal ou cheque na data de vencimento. A análise de crédito recai principalmente sobre o sacado." },
   { q: "Quais títulos posso antecipar?", a: "Duplicatas, notas fiscais, cheques, promissórias, contratos e recebíveis de cartão, sempre sujeitos à validação documental e análise de crédito." },
-  { q: "A aprovação é garantida?", a: "Não. Toda operação está sujeita à análise cadastral, documental, de crédito do sacado, prevenção à fraude e às políticas internas e de PLD/FT da Fluxo Prime." },
+  { q: "A aprovação é garantida?", a: "Não. Toda operação está sujeita à análise cadastral, documental, de crédito do sacado, prevenção à fraude e às políticas internas e de PLD/FT da New Capital." },
 ];
 
 export default function FactoringPage() {

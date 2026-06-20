@@ -163,7 +163,7 @@ export default function AdminRelatorios() {
         <Disclaimer>
           Relatórios demonstrativos gerados a partir de dados simulados. Não
           representam indicadores financeiros reais nem posições contábeis da
-          Fluxo Prime Fomento S/A.
+          New Capital Fomento Mercantil Ltda.
         </Disclaimer>
       </div>
     </>

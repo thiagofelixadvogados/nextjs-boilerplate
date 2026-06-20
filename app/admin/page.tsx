@@ -70,7 +70,7 @@ export default function AdminDashboard() {
     <>
       <PageHead
         title="Painel administrativo"
-        subtitle="Visão consolidada de clientes, títulos, operações e carteiras — Fluxo Prime Fomento S/A."
+        subtitle="Visão consolidada de clientes, títulos, operações e carteiras — New Capital Fomento Mercantil Ltda."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

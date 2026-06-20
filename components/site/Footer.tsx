@@ -84,7 +84,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-white/50">
-            <strong className="text-white/70">Fluxo Prime Fomento S/A</strong> —
+            <strong className="text-white/70">New Capital Fomento Mercantil Ltda.</strong> —
             Fomento Mercantil. Capital integralizado de R$ 5.000.000,00. As
             operações de aquisição de direitos creditórios estão sujeitas à
             análise cadastral, análise de crédito do sacado, validação
@@ -93,8 +93,12 @@ export function Footer() {
             captação de recursos junto ao público. Conteúdo meramente
             informativo e demonstrativo.
           </p>
-          <p className="mt-4 text-xs text-white/40">
-            © {new Date().getFullYear()} Fluxo Prime Fomento S/A. Todos os
+          <p className="mt-4 text-xs text-white/50">
+            Sede administrativa: Rua XV de Novembro, 30 — 9º andar, Sala 904 —
+            Centro, Vitória — Espírito Santo — CEP 29010-130.
+          </p>
+          <p className="mt-2 text-xs text-white/40">
+            © {new Date().getFullYear()} New Capital Fomento Mercantil Ltda. Todos os
             direitos reservados. Projeto demonstrativo.
           </p>
         </div>

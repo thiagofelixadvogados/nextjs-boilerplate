@@ -10,7 +10,7 @@ export default function Termos() {
         {
           h: "Natureza das operações",
           p: [
-            "A Fluxo Prime Fomento S/A atua com fomento mercantil (factoring), realizando a aquisição de direitos creditórios mediante deságio. As operações não constituem empréstimo, financiamento bancário, investimento ou captação de recursos junto ao público.",
+            "A New Capital Fomento Mercantil Ltda. atua com fomento mercantil (factoring), realizando a aquisição de direitos creditórios mediante deságio. As operações não constituem empréstimo, financiamento bancário, investimento ou captação de recursos junto ao público.",
           ],
         },
         {

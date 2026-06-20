@@ -333,7 +333,7 @@ export default function PerfilPage() {
                 ["propostas", "Atualizações de propostas e análises"],
                 ["operacoes", "Liberações, vencimentos e liquidações"],
                 ["documentos", "Pendências e validação de documentos"],
-                ["marketing", "Novidades e comunicações da Fluxo Prime"],
+                ["marketing", "Novidades e comunicações da New Capital"],
               ] as [keyof typeof prefs, string][]
             ).map(([key, label]) => (
               <label

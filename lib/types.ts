@@ -1,5 +1,5 @@
 // ============================================================================
-// Fluxo Prime Fomento S/A — Domain types
+// New Capital Fomento Mercantil Ltda. — Domain types
 // ============================================================================
 
 export type Role = "client" | "admin";

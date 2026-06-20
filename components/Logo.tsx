@@ -1,45 +1,40 @@
 import Link from "next/link";
 
 export function LogoMark({ className = "" }: { className?: string }) {
-  // Premium "FP" monogram with an upward-flow accent — financial-institution feel.
-  // No scales of justice, no law-office vibe.
+  // Interlocking "NC" monogram — New Capital. Gold on navy, premium financial feel.
+  const navy = "#0d1b3a";
   return (
-    <svg viewBox="0 0 44 44" className={className} fill="none" aria-hidden>
+    <svg viewBox="0 0 48 48" className={className} fill="none" aria-hidden>
       <defs>
-        <linearGradient id="fp-gold" x1="6" y1="6" x2="38" y2="38">
+        <linearGradient id="nc-gold" x1="8" y1="8" x2="40" y2="40">
           <stop offset="0" stopColor="#e7cd8a" />
           <stop offset="0.5" stopColor="#d9b35c" />
           <stop offset="1" stopColor="#b88a2b" />
         </linearGradient>
-        <linearGradient id="fp-navy" x1="0" y1="0" x2="44" y2="44">
+        <linearGradient id="nc-navy" x1="0" y1="0" x2="48" y2="48">
           <stop offset="0" stopColor="#122451" />
           <stop offset="1" stopColor="#0a1124" />
         </linearGradient>
       </defs>
-      <rect width="44" height="44" rx="12" fill="url(#fp-navy)" />
+      <rect width="48" height="48" rx="13" fill="url(#nc-navy)" />
       {/* fine gold inset border */}
-      <rect x="3.5" y="3.5" width="37" height="37" rx="9.5" stroke="url(#fp-gold)" strokeOpacity="0.45" strokeWidth="1" />
-      {/* serif FP monogram */}
-      <text
-        x="22"
-        y="30.5"
-        textAnchor="middle"
-        fontFamily="Georgia, 'Times New Roman', serif"
-        fontSize="22"
-        fontWeight="600"
-        letterSpacing="-1"
-        fill="url(#fp-gold)"
-      >
-        FP
-      </text>
-      {/* upward-flow accent underline */}
+      <rect x="3.75" y="3.75" width="40.5" height="40.5" rx="10" stroke="url(#nc-gold)" strokeOpacity="0.4" strokeWidth="1" />
+
+      {/* C — open serif ring */}
       <path
-        d="M12 34.5c5 0 7-2.4 10-2.4s5 2.4 10 2.4"
-        stroke="url(#fp-gold)"
-        strokeWidth="1.6"
+        d="M32.5 16.2A11 11 0 1 0 32.5 31.8"
+        stroke="url(#nc-gold)"
+        strokeWidth="3"
         strokeLinecap="round"
-        opacity="0.85"
       />
+
+      {/* N — drawn over the C with a navy halo to create the interlace */}
+      <g strokeLinecap="round" strokeLinejoin="round" fill="none">
+        {/* navy halo (knockout) */}
+        <path d="M16 32V16M16 16L30 32M30 32V16" stroke={navy} strokeWidth="6.4" />
+        {/* gold strokes */}
+        <path d="M16 32V16M16 16L30 32M30 32V16" stroke="url(#nc-gold)" strokeWidth="3" />
+      </g>
     </svg>
   );
 }
@@ -70,7 +65,7 @@ export function Logo({
               light ? "text-white/60" : "text-muted"
             }`}
           >
-            Fomento S/A
+            Fomento Mercantil Ltda.
           </span>
         </span>
       )}
