@@ -58,7 +58,7 @@ export function Logo({
               light ? "text-white" : "text-navy-900"
             }`}
           >
-            FLUXO <span className="gold-text">PRIME</span>
+            NEW <span className="gold-text">CAPITAL</span>
           </span>
           <span
             className={`block text-[10px] font-medium uppercase tracking-[0.32em] ${
