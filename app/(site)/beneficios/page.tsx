@@ -28,7 +28,7 @@ export default function Beneficios() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {beneficios.map(([t, d]) => (
-            <Card key={t} className="flex gap-4 p-5">
+            <Card key={t} className="hover-lift flex gap-4 p-5">
               <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600">✓</span>
               <div>
                 <h3 className="font-semibold text-navy-900">{t}</h3>

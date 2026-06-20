@@ -25,7 +25,8 @@ export function Navbar() {
   const dashHref = state.currentUser?.role === "admin" ? "/admin" : "/app/dashboard";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur-md">
+      <div className="h-0.5 w-full bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600" />
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Logo />
 
@@ -34,10 +35,10 @@ export function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+              className={`relative rounded-lg px-3 py-2 text-sm font-medium transition after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-gold-400 after:transition-all ${
                 pathname === l.href
-                  ? "text-navy-900"
-                  : "text-muted hover:text-navy-900"
+                  ? "text-navy-900 after:opacity-100"
+                  : "text-muted hover:text-navy-900 after:opacity-0"
               }`}
             >
               {l.label}

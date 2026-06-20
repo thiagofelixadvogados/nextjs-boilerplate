@@ -45,7 +45,7 @@ export default function Compliance() {
             <SectionTitle eyebrow="Garantias" title="Selos de confiança" />
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {selos.map(([t, d]) => (
-                <Card key={t} className="p-5">
+                <Card key={t} className="hover-lift p-5">
                   <span className="grid h-9 w-9 place-items-center rounded-lg bg-navy-900 text-gold-300">⛨</span>
                   <h3 className="mt-3 font-semibold text-navy-900">{t}</h3>
                   <p className="mt-1 text-sm text-muted">{d}</p>
