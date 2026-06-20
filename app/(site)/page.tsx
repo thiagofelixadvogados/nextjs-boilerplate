@@ -103,7 +103,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <SectionTitle
           center
-          eyebrow="Por que a Fluxo Prime"
+          eyebrow="Por que a New Capital"
           title="Uma estrutura completa para PMEs que precisam de velocidade, limite e confiança"
           subtitle="Mais caixa, menos burocracia, mais controle. Transformamos vendas a prazo em liquidez para a sua empresa."
         />
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
           <p className="mt-6 text-xs text-white/45">
             Acesso de demonstração — cliente: <strong className="text-white/70">cliente@empresa.com</strong> / cliente123 ·
-            admin: <strong className="text-white/70">admin@fluxoprime.com</strong> / admin123
+            admin: <strong className="text-white/70">admin@newcapital.com</strong> / admin123
           </p>
         </div>
         <div className="mt-8">

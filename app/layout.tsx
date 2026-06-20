@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title:
-    "Fluxo Prime Fomento S/A — Factoring Premium e Antecipação de Recebíveis",
+    "New Capital Fomento Mercantil Ltda. — Factoring Premium e Antecipação de Recebíveis",
   description:
     "Capital de giro inteligente para empresas que não podem esperar. Antecipe recebíveis com transparência, tecnologia e segurança jurídica.",
 };

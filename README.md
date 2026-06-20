@@ -1,4 +1,4 @@
-# Fluxo Prime Fomento S/A — Plataforma de Factoring (protótipo funcional)
+# New Capital Fomento Mercantil Ltda. — Plataforma de Factoring (protótipo funcional)
 
 Aplicação web institucional **+ portal do cliente + área administrativa** para uma
 factoring premium (fomento mercantil / antecipação de recebíveis), construída em
@@ -25,7 +25,7 @@ Build de produção: `npm run build && npm start`.
 | Perfil  | E-mail                  | Senha       |
 | ------- | ----------------------- | ----------- |
 | Cliente | `cliente@empresa.com`   | `cliente123`|
-| Admin   | `admin@fluxoprime.com`  | `admin123`  |
+| Admin   | `admin@newcapital.com`  | `admin123`  |
 
 Você também pode criar um novo cadastro de cliente em **/cadastro** (multi-etapas).
 

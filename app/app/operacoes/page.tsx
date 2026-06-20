@@ -134,7 +134,7 @@ export default function Operacoes() {
 
             <Disclaimer>
               Informações demonstrativas referentes à operação de fomento mercantil
-              registrada no portal Fluxo Prime.
+              registrada no portal New Capital.
             </Disclaimer>
           </div>
         )}

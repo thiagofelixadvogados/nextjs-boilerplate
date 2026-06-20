@@ -39,10 +39,14 @@ export default function Contato() {
             <Card className="p-6">
               <p className="text-xs font-bold uppercase tracking-wide text-gold-600">Atendimento</p>
               <div className="mt-4 space-y-3 text-sm">
-                <p className="text-navy-900"><strong>Fluxo Prime Fomento S/A</strong></p>
+                <p className="text-navy-900"><strong>New Capital Fomento Mercantil Ltda.</strong></p>
                 <p className="text-muted">Factoring Premium · Antecipação de Recebíveis</p>
-                <p className="text-muted">contato@fluxoprime.com</p>
+                <p className="text-muted">contato@newcapital.com</p>
                 <p className="text-muted">Seg. a Sex., 9h às 18h</p>
+                <p className="border-t border-line pt-3 text-muted">
+                  Rua XV de Novembro, 30 — 9º andar, Sala 904<br />
+                  Centro, Vitória — ES · CEP 29010-130
+                </p>
               </div>
             </Card>
             <Card className="p-6">

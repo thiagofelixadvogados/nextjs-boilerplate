@@ -63,7 +63,7 @@ export default function AtendimentoPage() {
     <>
       <PageHead
         title="Atendimento"
-        subtitle="Fale com a equipe da Fluxo Prime e acompanhe seu histórico."
+        subtitle="Fale com a equipe da New Capital e acompanhe seu histórico."
       />
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.7fr]">
@@ -117,13 +117,13 @@ export default function AtendimentoPage() {
               Canais de contato
             </p>
             <p className="mt-2 font-serif text-lg font-semibold text-gold-300">
-              Fale com a Fluxo Prime
+              Fale com a New Capital
             </p>
           </div>
           <div className="space-y-3 p-6 text-sm">
             <div>
               <p className="text-muted">E-mail</p>
-              <p className="font-medium text-navy-900">contato@fluxoprime.com</p>
+              <p className="font-medium text-navy-900">contato@newcapital.com</p>
             </div>
             <div>
               <p className="text-muted">Horário de atendimento</p>
@@ -180,7 +180,7 @@ export default function AtendimentoPage() {
                         FP
                       </span>
                       <span className="text-xs font-semibold text-navy-900">
-                        Equipe Fluxo Prime
+                        Equipe New Capital
                       </span>
                       {t.respondido && <Badge tone="success">Respondido</Badge>}
                     </div>

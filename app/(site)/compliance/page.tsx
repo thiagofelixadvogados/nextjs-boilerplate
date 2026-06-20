@@ -58,7 +58,7 @@ export default function Compliance() {
         <div className="mt-12">
           <Disclaimer>
             As políticas de compliance, PLD/FT e LGPD são aplicadas conforme a
-            legislação vigente e os procedimentos internos da Fluxo Prime. A
+            legislação vigente e os procedimentos internos da New Capital. A
             aprovação de qualquer operação está condicionada ao resultado dessas
             verificações.
           </Disclaimer>

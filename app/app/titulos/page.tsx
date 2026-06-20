@@ -239,7 +239,7 @@ export default function Titulos() {
           <Disclaimer>
             O envio do título não representa contratação. As condições finais dependem
             de análise cadastral, documental, de crédito do sacado, prevenção à fraude
-            e às políticas de PLD/FT e LGPD da Fluxo Prime.
+            e às políticas de PLD/FT e LGPD da New Capital.
           </Disclaimer>
         </div>
       </div>

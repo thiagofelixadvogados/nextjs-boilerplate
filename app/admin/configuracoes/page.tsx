@@ -84,7 +84,7 @@ export default function AdminConfiguracoes() {
           <dl className="mt-4 space-y-2 text-sm">
             <div className="flex justify-between">
               <dt className="text-muted">E-mail</dt>
-              <dd className="font-medium text-navy-900">admin@fluxoprime.com</dd>
+              <dd className="font-medium text-navy-900">admin@newcapital.com</dd>
             </div>
             <div className="flex justify-between">
               <dt className="text-muted">Senha</dt>

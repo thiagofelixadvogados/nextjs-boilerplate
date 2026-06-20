@@ -26,7 +26,7 @@ export default function LoginPage() {
       return;
     }
     toast("Bem-vindo de volta!", "success");
-    const isAdmin = email.trim().toLowerCase() === "admin@fluxoprime.com";
+    const isAdmin = email.trim().toLowerCase() === "admin@newcapital.com";
     router.push(isAdmin ? "/admin" : "/app/dashboard");
   };
 
@@ -38,7 +38,7 @@ export default function LoginPage() {
   return (
     <div>
       <h1 className="font-serif text-3xl font-semibold text-navy-900">Entrar</h1>
-      <p className="mt-2 text-sm text-muted">Acesse o portal da Fluxo Prime Fomento.</p>
+      <p className="mt-2 text-sm text-muted">Acesse o portal da New Capital Fomento.</p>
 
       <form onSubmit={submit} className="mt-8 space-y-4">
         <Field label="E-mail" required>
@@ -67,8 +67,8 @@ export default function LoginPage() {
             <span><strong className="text-navy-900">Cliente</strong> · cliente@empresa.com</span>
             <span className="text-xs text-gold-600">usar →</span>
           </button>
-          <button onClick={() => fill("admin@fluxoprime.com", "admin123")} className="flex w-full items-center justify-between rounded-lg border border-line px-3 py-2 text-left hover:border-navy-600">
-            <span><strong className="text-navy-900">Admin</strong> · admin@fluxoprime.com</span>
+          <button onClick={() => fill("admin@newcapital.com", "admin123")} className="flex w-full items-center justify-between rounded-lg border border-line px-3 py-2 text-left hover:border-navy-600">
+            <span><strong className="text-navy-900">Admin</strong> · admin@newcapital.com</span>
             <span className="text-xs text-gold-600">usar →</span>
           </button>
         </div>

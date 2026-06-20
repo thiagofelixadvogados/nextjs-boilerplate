@@ -47,7 +47,7 @@ export default function AdminSecuritizadora() {
   );
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [nome, setNome] = useState("Carteira FP-2026");
+  const [nome, setNome] = useState("Carteira NC-2026");
   const [status, setStatus] = useState<CarteiraStatus>("em-formacao");
 
   const toggle = (id: string) =>
