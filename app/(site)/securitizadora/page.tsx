@@ -26,7 +26,7 @@ export default function Securitizadora() {
             <SectionTitle eyebrow="Como gera valor" title="Mais capacidade para atender sua empresa" subtitle="Ao estruturar carteiras com uma securitizadora, ampliamos a capacidade de originação, ganhamos escala e podemos oferecer condições mais competitivas." />
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[["Escala", "Mais volume"], ["Taxas", "Mais competitivas"], ["Capacidade", "Alto ticket"]].map(([t, d]) => (
-                <Card key={t} className="p-5 text-center">
+                <Card key={t} className="hover-lift p-5 text-center">
                   <p className="font-serif text-lg font-semibold text-navy-900">{t}</p>
                   <p className="text-xs text-muted">{d}</p>
                 </Card>

@@ -31,7 +31,7 @@ export default function Estrutura() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pilares.map(([t, d]) => (
-            <Card key={t} className="p-5">
+            <Card key={t} className="hover-lift p-5">
               <h3 className="font-semibold text-navy-900">{t}</h3>
               <p className="mt-1.5 text-sm text-muted">{d}</p>
             </Card>
