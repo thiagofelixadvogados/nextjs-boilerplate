@@ -109,7 +109,7 @@ export default function Home() {
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {diferenciais.map((d) => (
-            <Card key={d.t} className="p-6 transition hover:-translate-y-0.5 hover:card-shadow">
+            <Card key={d.t} className="hover-lift p-6">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-navy-900 text-lg text-gold-300">
                 {d.i}
               </span>

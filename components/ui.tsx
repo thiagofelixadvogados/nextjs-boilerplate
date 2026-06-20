@@ -15,14 +15,16 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const btnBase =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/60 disabled:opacity-50 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-2 rounded-xl font-semibold tracking-tight transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/60 focus-visible:ring-offset-2 active:translate-y-px disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0";
 
 const btnVariants: Record<string, string> = {
-  primary: "bg-navy-900 text-white hover:bg-navy-800 shadow-sm",
-  gold: "bg-gradient-to-r from-gold-500 to-gold-400 text-navy-950 hover:from-gold-400 hover:to-gold-300 shadow-sm",
-  outline: "border border-navy-900/20 text-navy-900 hover:bg-navy-900/5",
-  ghost: "text-navy-900 hover:bg-navy-900/5",
-  danger: "bg-red-600 text-white hover:bg-red-700",
+  primary:
+    "bg-navy-900 text-white hover:bg-navy-800 shadow-[0_2px_8px_-2px_rgba(13,27,58,0.5)] hover:shadow-[0_6px_18px_-4px_rgba(13,27,58,0.55)]",
+  gold:
+    "bg-gradient-to-br from-gold-400 to-gold-600 text-navy-950 hover:from-gold-300 hover:to-gold-500 shadow-[0_2px_10px_-2px_rgba(199,154,60,0.55)] hover:shadow-[0_8px_22px_-6px_rgba(199,154,60,0.6)]",
+  outline: "border border-navy-900/15 text-navy-900 hover:bg-navy-900/[0.04] hover:border-navy-900/25",
+  ghost: "text-navy-900 hover:bg-navy-900/[0.05]",
+  danger: "bg-red-600 text-white hover:bg-red-700 shadow-[0_2px_8px_-2px_rgba(220,38,38,0.5)]",
 };
 
 const btnSizes: Record<string, string> = {
@@ -93,17 +95,17 @@ export function StatCard({
     red: "text-red-600",
   };
   return (
-    <Card className="p-5">
+    <Card className="hover-lift p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-muted">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
             {label}
           </p>
-          <p className={`mt-2 text-2xl font-bold ${tones[tone]}`}>{value}</p>
+          <p className={`mt-2 text-2xl font-bold tracking-tight tabular-nums ${tones[tone]}`}>{value}</p>
           {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
         </div>
         {icon && (
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-navy-900/5 text-navy-800">
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-navy-900/[0.07] to-navy-900/[0.03] text-navy-800">
             {icon}
           </span>
         )}
@@ -173,7 +175,7 @@ export function Field({
 }
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition focus:border-navy-600 focus:ring-2 focus:ring-navy-600/15 placeholder:text-muted/70";
+  "w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition-all duration-200 hover:border-navy-600/40 focus:border-navy-600 focus:ring-4 focus:ring-navy-600/10 placeholder:text-muted/60";
 
 export const Input = React.forwardRef<
   HTMLInputElement,
