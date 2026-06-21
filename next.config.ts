@@ -4,12 +4,17 @@ import type { NextConfig } from "next";
 // Local dev and Vercel builds are unaffected (BUILD_TARGET is unset there).
 const isPages = process.env.BUILD_TARGET === "pages";
 const repo = "nextjs-boilerplate";
+const basePath = isPages ? `/${repo}` : "";
 
 const nextConfig: NextConfig = {
+  // Exposed to the client so plain <img src> can be prefixed with the basePath.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   ...(isPages
     ? {
         output: "export",
-        basePath: `/${repo}`,
+        basePath,
         assetPrefix: `/${repo}/`,
         images: { unoptimized: true },
         trailingSlash: true,

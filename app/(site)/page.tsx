@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, Card, SectionTitle, Disclaimer } from "@/components/ui";
+import { asset } from "@/lib/asset";
 
 const diferenciais = [
   { t: "Capital robusto", d: "Capital integralizado de R$ 5 milhões para operações de alto ticket.", i: "▣" },
@@ -67,7 +68,7 @@ export default function Home() {
               <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gold-500/10 blur-2xl" />
               <div className="overflow-hidden rounded-[1.6rem] border border-gold-500/25 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.85)]">
                 <img
-                  src="/nc-lockup.png"
+                  src={asset("/nc-lockup.png")}
                   alt="New Capital Fomento Mercantil Ltda. — Matriz Guaxupé · Filial São Paulo"
                   className="w-full"
                 />
