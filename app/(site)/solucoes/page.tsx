@@ -15,7 +15,7 @@ export default function Solucoes() {
   return (
     <>
       <PageHero
-        eyebrow="O que Atuamos"
+        eyebrow="Onde Atuamos"
         title={<>Modalidades para cada <span className="gold-text">necessidade de caixa.</span></>}
         subtitle="Da antecipação convencional à gestão completa da carteira, estruturamos a operação certa para o seu momento."
       />
