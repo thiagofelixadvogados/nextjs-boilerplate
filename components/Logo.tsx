@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 // Official New Capital monogram (gold NC badge). Works on light and dark backgrounds.
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <img
-      src="/nc-logo.png"
+      src={asset("/nc-logo.png")}
       alt="New Capital"
       width={48}
       height={48}

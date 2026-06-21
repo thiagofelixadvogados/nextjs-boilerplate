@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/site/Pieces";
 import { Card, Button, Disclaimer, SectionTitle, StatCard } from "@/components/ui";
+import { asset } from "@/lib/asset";
 
 const pilares = [
   ["Capital integralizado", "R$ 5.000.000,00 para sustentar operações de alto ticket."],
@@ -33,7 +34,7 @@ export default function Estrutura() {
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
           <div className="overflow-hidden rounded-3xl border border-line card-shadow">
             <img
-              src="/nc-office.jpg"
+              src={asset("/nc-office.jpg")}
               alt="Sinalização da sede da New Capital Fomento Mercantil"
               className="h-full w-full object-cover"
             />
