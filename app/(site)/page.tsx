@@ -69,10 +69,13 @@ export default function Home() {
               <div className="overflow-hidden rounded-[1.6rem] border border-gold-500/25 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.85)]">
                 <img
                   src={asset("/nc-lockup.png")}
-                  alt="New Capital Fomento Mercantil Ltda. — Matriz Guaxupé · Filial São Paulo"
+                  alt="New Capital Fomento Mercantil Ltda. — Matriz Guaxupé/MG · Filial São Paulo/SP"
                   className="w-full"
                 />
               </div>
+              <p className="mt-4 text-center text-xs tracking-wide text-white/55">
+                Matriz Guaxupé/MG&nbsp;&nbsp;·&nbsp;&nbsp;Filial São Paulo/SP
+              </p>
             </div>
           </div>
         </div>
