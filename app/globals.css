@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette — clean: warm black + gold + cream (matches the NC logo) */
-  --navy-950: #0b0a07;
-  --navy-900: #14110b;
-  --navy-800: #1d180f;
-  --navy-700: #2a2316;
-  --navy-600: #3c3220;
-  --gold-600: #a67d26;
-  --gold-500: #c0922d;
-  --gold-400: #d6b057;
-  --gold-300: #ecd49a;
-  --ink: #1c1812;
-  --paper: #faf7f0;
-  --muted: #837b6b;
-  --line: #ece6d9;
-  --ring: rgba(166, 125, 38, 0.35);
+  /* Brand palette — sampled directly from the official NC logo (black + metallic gold) */
+  --navy-950: #060504;
+  --navy-900: #100d09;
+  --navy-800: #1a160e;
+  --navy-700: #271f14;
+  --navy-600: #382e1d;
+  --gold-600: #8d5e20;
+  --gold-500: #cea153;
+  --gold-400: #dcb466;
+  --gold-300: #f0d99a;
+  --ink: #1a160f;
+  --paper: #faf7ef;
+  --muted: #847b69;
+  --line: #ece5d6;
+  --ring: rgba(141, 94, 32, 0.35);
 
   --background: #ffffff;
   --foreground: var(--ink);
@@ -87,7 +87,7 @@ body {
 
 .bg-navy-gradient {
   background:
-    radial-gradient(900px 480px at 82% -10%, rgba(214, 176, 87, 0.14), transparent 60%),
+    radial-gradient(900px 480px at 82% -10%, rgba(206, 161, 83, 0.16), transparent 60%),
     linear-gradient(160deg, var(--navy-900) 0%, var(--navy-950) 100%);
 }
 
