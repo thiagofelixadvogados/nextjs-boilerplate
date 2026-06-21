@@ -43,10 +43,12 @@ export default function Contato() {
                 <p className="text-muted">Factoring Premium · Antecipação de Recebíveis</p>
                 <p className="text-muted">contato@newcapital.com</p>
                 <p className="text-muted">Seg. a Sex., 9h às 18h</p>
-                <p className="border-t border-line pt-3 text-muted">
-                  Rua XV de Novembro, 30 — 9º andar, Sala 904<br />
-                  Centro, Vitória — ES · CEP 29010-130
-                </p>
+                <div className="border-t border-line pt-3 text-muted">
+                  <p><strong className="text-navy-900">Matriz — Guaxupé/MG</strong><br />
+                  Rua Salesianos, 265 · CEP 37830-056</p>
+                  <p className="mt-2"><strong className="text-navy-900">Filial — São Paulo/SP</strong><br />
+                  Rua Clodomiro Amazonas, 1099 · CEP 04537-012</p>
+                </div>
               </div>
             </Card>
             <Card className="p-6">
