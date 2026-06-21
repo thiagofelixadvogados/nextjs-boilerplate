@@ -94,8 +94,9 @@ export function Footer() {
             informativo e demonstrativo.
           </p>
           <p className="mt-4 text-xs text-white/50">
-            Sede administrativa: Rua XV de Novembro, 30 — 9º andar, Sala 904 —
-            Centro, Vitória — Espírito Santo — CEP 29010-130.
+            <strong className="text-white/70">Matriz:</strong> Rua Salesianos, 265 — Guaxupé/MG — CEP 37830-056
+            &nbsp;·&nbsp;
+            <strong className="text-white/70">Filial:</strong> Rua Clodomiro Amazonas, 1099 — São Paulo/SP — CEP 04537-012
           </p>
           <p className="mt-2 text-xs text-white/40">
             © {new Date().getFullYear()} New Capital Fomento Mercantil Ltda. Todos os

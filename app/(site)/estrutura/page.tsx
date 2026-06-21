@@ -29,6 +29,36 @@ export default function Estrutura() {
           <StatCard label="Alto ticket" value="Sim" hint="via securitizadora" />
         </div>
 
+        {/* Institutional image + presença */}
+        <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-3xl border border-line card-shadow">
+            <img
+              src="/nc-office.jpg"
+              alt="Sinalização da sede da New Capital Fomento Mercantil"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <SectionTitle
+              eyebrow="Quem somos"
+              title={<>Uma casa de fomento construída sobre <span className="gold-text">confiança</span>.</>}
+              subtitle="Estrutura profissional, presença em praças estratégicas e atendimento próximo do cliente — para transformar recebíveis em crescimento com segurança."
+            />
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <Card className="hover-lift p-5">
+                <p className="text-xs font-bold uppercase tracking-wide text-gold-600">Matriz</p>
+                <p className="mt-2 font-semibold text-navy-900">Guaxupé — MG</p>
+                <p className="mt-1 text-sm text-muted">Rua Salesianos, 265 · CEP 37830-056</p>
+              </Card>
+              <Card className="hover-lift p-5">
+                <p className="text-xs font-bold uppercase tracking-wide text-gold-600">Filial</p>
+                <p className="mt-2 font-semibold text-navy-900">São Paulo — SP</p>
+                <p className="mt-1 text-sm text-muted">Rua Clodomiro Amazonas, 1099 · CEP 04537-012</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pilares.map(([t, d]) => (
             <Card key={t} className="hover-lift p-5">
