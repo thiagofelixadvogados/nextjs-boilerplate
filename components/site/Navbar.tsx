@@ -27,8 +27,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur-md">
       <div className="h-0.5 w-full bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600" />
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Logo />
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Logo size="lg" />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {links.map((l) => (

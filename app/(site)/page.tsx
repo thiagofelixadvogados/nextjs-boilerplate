@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button, Card, SectionTitle, Disclaimer } from "@/components/ui";
-import { LogoMark } from "@/components/Logo";
 
 const diferenciais = [
   { t: "Capital robusto", d: "Capital integralizado de R$ 5 milhões para operações de alto ticket.", i: "▣" },
@@ -25,75 +24,54 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-navy-gradient text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="animate-rise">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-gold-300">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-500/5 px-3.5 py-1.5 text-xs font-medium tracking-wide text-gold-300">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
               Factoring Premium • Fomento Mercantil • Recebíveis
             </span>
-            <h1 className="mt-5 font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Capital de giro inteligente para empresas que{" "}
-              <span className="gold-text">não podem esperar.</span>
+            <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[4.2rem]">
+              Capital de giro
+              <br className="hidden sm:block" /> para quem{" "}
+              <span className="gold-text">não pode esperar.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
               Antecipe recebíveis, fortaleça seu fluxo de caixa e profissionalize
               sua gestão financeira com uma factoring premium, transparente e
               orientada por compliance.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/app/simular" variant="gold" size="lg">
                 Simular operação
               </Button>
-              <Button href="/cadastro" size="lg" className="bg-white/10 text-white hover:bg-white/15 border border-white/15">
+              <Button href="/cadastro" size="lg" className="border border-white/15 bg-white/10 text-white hover:bg-white/15">
                 Criar cadastro
               </Button>
               <Button href="/contato" variant="ghost" size="lg" className="text-white hover:bg-white/10">
                 Falar com especialista
               </Button>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="mt-11 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
               {numeros.map((n) => (
-                <div key={n.l}>
+                <div key={n.l} className="border-l border-gold-500/30 pl-3">
                   <p className="font-serif text-2xl font-semibold text-gold-300">{n.v}</p>
-                  <p className="text-xs text-white/55">{n.l}</p>
+                  <p className="mt-0.5 text-xs text-white/55">{n.l}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Floating "operation" card */}
+          {/* Brand showcase — official logo lockup */}
           <div className="animate-rise lg:justify-self-end">
-            <div className="glass w-full max-w-sm rounded-3xl p-6">
-              <div className="flex items-center justify-between">
-                <LogoMark className="h-10 w-10" />
-                <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-semibold text-emerald-300">
-                  Sujeito à análise
-                </span>
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gold-500/10 blur-2xl" />
+              <div className="overflow-hidden rounded-[1.6rem] border border-gold-500/25 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.85)]">
+                <img
+                  src="/nc-lockup.png"
+                  alt="New Capital Fomento Mercantil Ltda. — Matriz Guaxupé · Filial São Paulo"
+                  className="w-full"
+                />
               </div>
-              <p className="mt-6 text-xs uppercase tracking-wide text-white/50">
-                Antecipação estimada
-              </p>
-              <p className="mt-1 font-serif text-4xl font-semibold text-white">
-                R$ 115.440
-              </p>
-              <div className="mt-5 space-y-2 text-sm">
-                {[
-                  ["Valor bruto do título", "R$ 120.000"],
-                  ["Prazo", "45 dias"],
-                  ["Deságio estimado", "R$ 4.320"],
-                  ["Tarifa operacional", "R$ 240"],
-                ].map(([k, v]) => (
-                  <div key={k} className="flex justify-between text-white/70">
-                    <span>{k}</span>
-                    <span className="font-medium text-white">{v}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 h-px bg-white/10" />
-              <p className="mt-3 text-[11px] leading-relaxed text-white/45">
-                Simulação meramente indicativa. Condições finais dependem de
-                análise cadastral, documental e de crédito do sacado.
-              </p>
             </div>
           </div>
         </div>
