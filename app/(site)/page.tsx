@@ -5,7 +5,7 @@ import { asset } from "@/lib/asset";
 const diferenciais = [
   { t: "Estrutura robusta", d: "Solidez e capacidade para operações de alto ticket.", i: "▣" },
   { t: "Aprovação rápida", d: "Análise ágil de títulos e do sacado, com resposta objetiva.", i: "⚡" },
-  { t: "Análise de crédito gratuita", d: "Avaliamos o sacado sem custo para você decidir com segurança.", i: "◎" },
+  { t: "Análise de crédito", d: "Avaliamos o sacado para você decidir com segurança.", i: "◎" },
   { t: "Cobrança terceirizada", d: "Gestão profissional de cobrança, notificação e acompanhamento.", i: "☎" },
   { t: "Gestão completa", d: "Dashboard, relatórios e indicadores de toda a sua carteira.", i: "▤" },
   { t: "Parceria com securitizadora", d: "Estruturação de carteiras para escala e taxas competitivas.", i: "⇄" },
@@ -14,7 +14,7 @@ const diferenciais = [
 ];
 
 const numeros = [
-  { v: "Gratuita", l: "Análise de crédito" },
+  { v: "Análise", l: "de crédito do sacado" },
   { v: "7", l: "Modalidades de operação" },
   { v: "100%", l: "Operações com compliance" },
   { v: "24h", l: "Análise ágil de títulos" },
@@ -155,10 +155,6 @@ export default function Home() {
               Simular agora
             </Button>
           </div>
-          <p className="mt-6 text-xs text-white/45">
-            Acesso de demonstração — cliente: <strong className="text-white/70">cliente@empresa.com</strong> / cliente123 ·
-            admin: <strong className="text-white/70">admin@newcapital.com</strong> / admin123
-          </p>
         </div>
         <div className="mt-8">
           <Disclaimer>

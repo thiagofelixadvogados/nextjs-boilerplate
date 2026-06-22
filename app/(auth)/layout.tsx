@@ -22,7 +22,7 @@ export default function AuthLayout({
             suas propostas em tempo real.
           </p>
           <ul className="mt-8 space-y-3">
-            {["Análise de crédito do sacado gratuita", "Cobrança e gestão profissional", "Compliance, LGPD e PLD/FT"].map((t) => (
+            {["Análise de crédito do sacado", "Cobrança e gestão profissional", "Compliance, LGPD e PLD/FT"].map((t) => (
               <li key={t} className="flex items-center gap-3 text-sm text-white/80">
                 <span className="grid h-6 w-6 place-items-center rounded-full bg-gold-400/20 text-gold-300">✓</span>
                 {t}
