@@ -50,6 +50,7 @@ export default function Estrutura() {
                 <p className="text-xs font-bold uppercase tracking-wide text-gold-600">Matriz</p>
                 <p className="mt-2 font-semibold text-navy-900">Guaxupé — MG</p>
                 <p className="mt-1 text-sm text-muted">Rua Salesianos, 265 · CEP 37830-056</p>
+                <p className="mt-1 text-sm text-muted">CNPJ 67.615.866/0001-88</p>
               </Card>
               <Card className="hover-lift p-5">
                 <p className="text-xs font-bold uppercase tracking-wide text-gold-600">Filial</p>

@@ -85,7 +85,7 @@ export function Footer() {
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-white/50">
             <strong className="text-white/70">New Capital Fomento Mercantil Ltda.</strong> —
-            Fomento Mercantil. As
+            CNPJ 67.615.866/0001-88 (Matriz) — Fomento Mercantil. As
             operações de aquisição de direitos creditórios estão sujeitas à
             análise cadastral, análise de crédito do sacado, validação
             documental, prevenção à fraude e às políticas de PLD/FT e LGPD.
@@ -94,7 +94,7 @@ export function Footer() {
             informativo e demonstrativo.
           </p>
           <p className="mt-4 text-xs text-white/50">
-            <strong className="text-white/70">Matriz:</strong> Rua Salesianos, 265 — Guaxupé/MG — CEP 37830-056
+            <strong className="text-white/70">Matriz:</strong> Rua Salesianos, 265 — Guaxupé/MG — CEP 37830-056 — CNPJ 67.615.866/0001-88
             &nbsp;·&nbsp;
             <strong className="text-white/70">Filial:</strong> Rua Clodomiro Amazonas, 1099 — São Paulo/SP — CEP 04537-012
           </p>
