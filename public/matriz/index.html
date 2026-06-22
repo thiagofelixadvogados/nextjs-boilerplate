@@ -227,6 +227,7 @@ input,select,textarea{font-family:inherit;font-size:13.5px;color:var(--ink)}
   .doc p,.doc .al{margin-bottom:7pt}
   .doc .clt{width:auto}
   .doc .clausula{break-inside:avoid}
+  .doc .sig,.doc .sigrow,.doc .sigbox{break-inside:avoid}
 }
 </style>
 </head>
@@ -255,7 +256,7 @@ input,select,textarea{font-family:inherit;font-size:13.5px;color:var(--ink)}
     <button onclick="modeloLimpo()">🧹 Modelo limpo</button>
     <button onclick="salvar()">💾 Salvar versão</button>
     <button onclick="exportarJSON()">⬇ Exportar JSON</button>
-    <button onclick="exportarDOCX()">📄 Exportar .docx</button>
+    <button onclick="exportarDOCX()">📄 Exportar Word (.doc)</button>
     <button onclick="document.getElementById('imp').click()">⬆ Importar</button>
     <button onclick="validarContrato()">✔ Validar</button>
     <button class="primary" onclick="gerarPDF()">🖨 Imprimir / Salvar em PDF</button>
@@ -630,10 +631,12 @@ function ordinal(n){
   return "Nº "+n;
 }
 
-/* ============ VALOR POR EXTENSO (reais inteiros) ============ */
+/* ============ VALOR POR EXTENSO (reais e centavos) ============ */
 function extenso(v){
-  let n=Math.round(parseFloat(String(v).replace(/[^\d,.-]/g,'').replace(/\./g,'').replace(',','.'))||0);
-  if(n===0) return "zero reais";
+  let val=parseFloat(String(v).replace(/[^\d,.-]/g,'').replace(/\./g,'').replace(',','.'))||0;
+  val=Math.round(val*100)/100;
+  const reais=Math.floor(val);
+  const cent=Math.round((val-reais)*100);
   const u=["","um","dois","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze","treze","quatorze","quinze","dezesseis","dezessete","dezoito","dezenove"];
   const d=["","","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"];
   const c=["","cento","duzentos","trezentos","quatrocentos","quinhentos","seiscentos","setecentos","oitocentos","novecentos"];
@@ -646,18 +649,25 @@ function extenso(v){
     if(r){ if(r<20) s.push(u[r]); else { let dz=Math.floor(r/10), un=r%10; s.push(d[dz]+(un?(" e "+u[un]):"")); } }
     return s.join(" e ");
   }
-  let parts=[];
-  const mi=Math.floor(n/1000000); n%=1000000;
-  const mil=Math.floor(n/1000); n%=1000;
-  const un=n;
-  if(mi) parts.push(mi===1?"um milhão":tri(mi)+" milhões");
-  if(mil) parts.push(mil===1?"mil":tri(mil)+" mil");
-  if(un) parts.push(tri(un));
-  let txt=parts.join(parts.length>1 && un && un<100 ? " e " : ", ");
-  // ajuste de conjunção final
-  txt=parts.join(", ");
-  if(parts.length>1){ let last=parts.pop(); txt=parts.join(", ")+" e "+last; }
-  return txt+" reais";
+  function inteiro(n){ // 0..999.999.999
+    if(n===0) return "";
+    let parts=[];
+    const mi=Math.floor(n/1000000); n%=1000000;
+    const mil=Math.floor(n/1000); n%=1000;
+    const un=n;
+    if(mi) parts.push(mi===1?"um milhão":tri(mi)+" milhões");
+    if(mil) parts.push(mil===1?"mil":tri(mil)+" mil");
+    if(un) parts.push(tri(un));
+    if(parts.length<=1) return parts.join("");
+    let last=parts.pop();
+    return parts.join(", ")+" e "+last;
+  }
+  const txtReais = reais===1 ? "um real" : (reais>0 ? inteiro(reais)+" reais" : "");
+  const txtCent  = cent===1  ? "um centavo" : (cent>0  ? inteiro(cent)+" centavos" : "");
+  if(reais===0 && cent===0) return "zero reais";
+  if(reais===0) return txtCent;
+  if(cent===0) return txtReais;
+  return txtReais+" e "+txtCent;
 }
 function brl(v){
   let n=parseFloat(String(v).replace(/[^\d,.-]/g,'').replace(/\./g,'').replace(',','.'));
@@ -1333,20 +1343,27 @@ function qualifica(){
   if(!ps.length) return "<b>[contratante]</b>";
   const sameEnd = ps.every(p=>p.end===ps[0].end && p.end);
   const blocos=ps.map(p=>{
-    let port = p.sexo==='F'?"portadora da cédula de identidade":"portador da cédula de identidade";
-    let insc = p.sexo==='F'?"inscrita no CPF":"inscrito no CPF";
+    const fem = p.sexo==='F';
     let q=`<b>${esc(p.nome)}</b>, ${esc(p.nac)}`;
     if(p.ec) q+=`, ${esc(p.ec)}`;
     if(p.prof) q+=`, ${esc(p.prof)}`;
-    q+=`, ${port} RG nº ${esc(p.rg)}, ${insc} sob nº ${esc(p.cpf)}`;
-    if(!sameEnd && p.end) q+=`, residente e domiciliado${p.sexo==='F'?'a':''} na ${esc(p.end)}`;
+    if(p.rg && p.rg.trim()) q+=`, ${fem?'portadora':'portador'} da cédula de identidade RG nº ${esc(p.rg)}`;
+    if(p.cpf && p.cpf.trim()) q+=`, ${fem?'inscrita':'inscrito'} no CPF sob nº ${esc(p.cpf)}`;
+    if(!sameEnd && p.end) q+=`, residente e domiciliad${fem?'a':'o'} na ${esc(p.end)}`;
     return q;
   });
   let txt;
   if(blocos.length===1) txt=blocos[0];
-  else txt=blocos.slice(0,-1).join(" e ")+" e "+blocos[blocos.length-1];
+  else txt=blocos.slice(0,-1).join(", ")+" e "+blocos[blocos.length-1];
   if(sameEnd){
-    const all = ps.length>1 ? "ambos residentes e domiciliados" : (ps[0].sexo==='F'?"residente e domiciliada":"residente e domiciliado");
+    const allFem = ps.every(p=>p.sexo==='F');
+    let all;
+    if(ps.length>1){
+      const pron = allFem ? (ps.length===2?"ambas":"todas") : (ps.length===2?"ambos":"todos");
+      all = `${pron} residentes e domiciliad${allFem?'as':'os'}`;
+    } else {
+      all = ps[0].sexo==='F'?"residente e domiciliada":"residente e domiciliado";
+    }
     txt+=`, ${all} na ${esc(ps[0].end)}`;
   }
   return txt;
@@ -1795,7 +1812,7 @@ function render(){
   } else {
     document.getElementById('livetag').textContent = "Pré-visualização · "+MODELOS[D.modelo].nome+(nome?" · "+nome.nome:"");
   }
-  autosave();
+  autosaveDebounced();
 }
 
 /* ============ TABS ============ */
@@ -1823,7 +1840,6 @@ function rodarIA(){
   for(const [re,k] of mapa){ if(new RegExp(re).test(t)){ aplicarModelo(k); log.push("Modelo: <b>"+MODELOS[k].nome+"</b>"); break; } }
   pull();
   // valores: honorários e êxito
-  const money=/r?\$?\s*([\d\.]{2,3}(?:\.\d{3})*(?:,\d{2})?|\d{4,})/g;
   function num(str){return str.replace(/[^\d]/g,'');}
   let mh=t.match(/honor[áa]rios?[^\d]{0,18}r?\$?\s*([\d\.]+)/);
   if(mh){ D.h_fixo=num(mh[1]); document.getElementById('h_fixo').value=D.h_fixo; log.push("Honorários fixos: <b>"+brl(D.h_fixo)+"</b>"); }
@@ -1831,8 +1847,16 @@ function rodarIA(){
   if(mx){ D.h_exito=num(mx[1]); D.clauses.exito=true; document.getElementById('h_exito').value=D.h_exito; log.push("Honorário de êxito: <b>"+brl(D.h_exito)+"</b> (cláusula ativada)"); }
   let md=t.match(/dilig[êe]ncia[^\d]{0,18}r?\$?\s*([\d\.]+)/);
   if(md){ D.h_dilig=num(md[1]); document.getElementById('h_dilig').value=D.h_dilig; log.push("Diligência adicional: <b>"+brl(D.h_dilig)+"</b>"); }
-  // cliente
-  let mc=t.match(/(?:cliente|investigad[oa]|acusad[oa]|paciente|r[ée]u)\s+(?:chamad[oa]\s+)?([a-zà-ú\.\s]{3,40}?)(?:,| na | no | em | por | investigad| acusad|\.|$)/i);
+  // cliente (contratante/outorgante)
+  let mc=raw.match(/(?:cliente|investigad[oa]|acusad[oa]|paciente|r[ée]u)\s+(?:chamad[oa]\s+)?([a-zà-úA-ZÀ-Ú\.\s]{3,40}?)(?:,| na | no | em | por | investigad| acusad|\.|$)/i);
+  if(mc && mc[1]){
+    let nm=mc[1].trim().replace(/\s+/g,' ').replace(/\S+/g,w=>w.charAt(0).toUpperCase()+w.slice(1));
+    if(nm.length>=3){
+      if(!D.parties.length) D.parties.push({nome:"",sexo:"M",nac:"brasileiro",ec:"",prof:"",rg:"",cpf:"",end:"",tel:"",email:""});
+      D.parties[0].nome=nm; renderParties();
+      log.push("Cliente: <b>"+esc(nm)+"</b>");
+    }
+  }
   // beneficiário do êxito
   if(/êxito|exito/.test(t) && D.parties[0]) { D.h_exbenef=D.parties[0].nome.split(' ').slice(0,2).join(' ')||D.h_exbenef; document.getElementById('h_exbenef').value=D.h_exbenef; }
   // cláusulas ativar/desativar
@@ -2021,6 +2045,7 @@ function limparTudo(){
 
 /* ============ PERSISTÊNCIA LOCAL ============ */
 function autosave(){ try{ localStorage.setItem('tf_autosave', JSON.stringify(D)); }catch(e){} }
+let _autosaveT; function autosaveDebounced(){ clearTimeout(_autosaveT); _autosaveT=setTimeout(autosave,400); }
 function loadAutosave(){ try{ const s=localStorage.getItem('tf_autosave'); if(s){ Object.assign(D,JSON.parse(s)); return true; } }catch(e){} return false; }
 function loadSaved(){ try{ const s=localStorage.getItem('tf_saved'); if(s) SAVED=JSON.parse(s); }catch(e){} }
 function persistSaved(){ try{ localStorage.setItem('tf_saved', JSON.stringify(SAVED)); }catch(e){} }
