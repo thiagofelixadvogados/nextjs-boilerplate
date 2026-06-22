@@ -3,7 +3,7 @@ import { Button, Card, SectionTitle, Disclaimer } from "@/components/ui";
 import { asset } from "@/lib/asset";
 
 const diferenciais = [
-  { t: "Capital robusto", d: "Capital integralizado de R$ 5 milhões para operações de alto ticket.", i: "▣" },
+  { t: "Estrutura robusta", d: "Solidez e capacidade para operações de alto ticket.", i: "▣" },
   { t: "Aprovação rápida", d: "Análise ágil de títulos e do sacado, com resposta objetiva.", i: "⚡" },
   { t: "Análise de crédito gratuita", d: "Avaliamos o sacado sem custo para você decidir com segurança.", i: "◎" },
   { t: "Cobrança terceirizada", d: "Gestão profissional de cobrança, notificação e acompanhamento.", i: "☎" },
@@ -14,7 +14,7 @@ const diferenciais = [
 ];
 
 const numeros = [
-  { v: "R$ 5 mi", l: "Capital integralizado" },
+  { v: "Gratuita", l: "Análise de crédito" },
   { v: "7", l: "Modalidades de operação" },
   { v: "100%", l: "Operações com compliance" },
   { v: "24h", l: "Análise ágil de títulos" },

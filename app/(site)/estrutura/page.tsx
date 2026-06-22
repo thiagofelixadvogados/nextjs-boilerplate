@@ -3,7 +3,7 @@ import { Card, Button, Disclaimer, SectionTitle, StatCard } from "@/components/u
 import { asset } from "@/lib/asset";
 
 const pilares = [
-  ["Capital integralizado", "R$ 5.000.000,00 para sustentar operações de alto ticket."],
+  ["Estrutura robusta", "Capacidade e solidez para operações de alto ticket."],
   ["Tecnologia própria", "Plataforma de originação, análise e gestão de carteira."],
   ["Equipe especializada", "Crédito, jurídico, compliance e atendimento dedicados."],
   ["Governança", "Processos, alçadas e contratos claros em cada operação."],
@@ -24,7 +24,7 @@ export default function Estrutura() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <StatCard label="Capital integralizado" value="R$ 5 mi" tone="gold" />
+          <StatCard label="Presença" value="MG · SP" hint="Matriz e filial" tone="gold" />
           <StatCard label="Modalidades" value="7" hint="de fomento mercantil" />
           <StatCard label="Compliance" value="100%" hint="das operações" tone="green" />
           <StatCard label="Alto ticket" value="Sim" hint="via securitizadora" />
