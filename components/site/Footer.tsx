@@ -85,7 +85,7 @@ export function Footer() {
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-white/50">
             <strong className="text-white/70">New Capital Fomento Mercantil Ltda.</strong> —
-            Fomento Mercantil. Capital integralizado de R$ 5.000.000,00. As
+            Fomento Mercantil. As
             operações de aquisição de direitos creditórios estão sujeitas à
             análise cadastral, análise de crédito do sacado, validação
             documental, prevenção à fraude e às políticas de PLD/FT e LGPD.
