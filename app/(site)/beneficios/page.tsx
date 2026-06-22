@@ -6,7 +6,7 @@ const beneficios = [
   ["Melhora do fluxo de caixa", "Equilibre entradas e saídas com previsibilidade."],
   ["Poder de negociação", "Compre melhor de fornecedores pagando à vista."],
   ["Menos dependência de bancos", "Diversifique suas fontes de capital de giro."],
-  ["Análise de crédito do sacado", "Avaliamos quem deve pagar, sem custo para você."],
+  ["Análise de crédito do sacado", "Avaliamos quem deve pagar para você decidir com segurança."],
   ["Redução de inadimplência", "Critérios de risco e prevenção à fraude."],
   ["Cobrança profissional", "Gestão de recebimento, notificação e acompanhamento."],
   ["Gestão financeira terceirizada", "Trustee de contas a receber e a pagar."],
