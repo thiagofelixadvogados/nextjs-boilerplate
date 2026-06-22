@@ -45,7 +45,8 @@ export default function Contato() {
                 <p className="text-muted">Seg. a Sex., 9h às 18h</p>
                 <div className="border-t border-line pt-3 text-muted">
                   <p><strong className="text-navy-900">Matriz — Guaxupé/MG</strong><br />
-                  Rua Salesianos, 265 · CEP 37830-056</p>
+                  Rua Salesianos, 265 · CEP 37830-056<br />
+                  CNPJ 67.615.866/0001-88</p>
                   <p className="mt-2"><strong className="text-navy-900">Filial — São Paulo/SP</strong><br />
                   Rua Clodomiro Amazonas, 1099 · CEP 04537-012</p>
                 </div>
