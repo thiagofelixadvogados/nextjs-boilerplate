@@ -1,21 +1,19 @@
 import type { NextConfig } from "next";
 
-// When building for GitHub Pages we emit a fully static site under a basePath.
-// Local dev and Vercel builds are unaffected (BUILD_TARGET is unset there).
+// Static export for GitHub Pages. Served at the ROOT of the custom domain
+// (newcapitalfomento.com.br), so there is no basePath. Local dev and Vercel
+// builds are unaffected (BUILD_TARGET is unset there).
 const isPages = process.env.BUILD_TARGET === "pages";
-const repo = "nextjs-boilerplate";
-const basePath = isPages ? `/${repo}` : "";
 
 const nextConfig: NextConfig = {
-  // Exposed to the client so plain <img src> can be prefixed with the basePath.
+  // Exposed to the client so plain <img src> stays in sync with any basePath.
+  // Empty now that the site is served at the custom domain root.
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_BASE_PATH: "",
   },
   ...(isPages
     ? {
         output: "export",
-        basePath,
-        assetPrefix: `/${repo}/`,
         images: { unoptimized: true },
         trailingSlash: true,
       }
