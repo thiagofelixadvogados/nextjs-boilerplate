@@ -35,7 +35,7 @@ export default function Privacidade() {
         },
         {
           h: "Contato",
-          p: ["Dúvidas sobre privacidade podem ser encaminhadas para privacidade@newcapital.com."],
+          p: ["Dúvidas sobre privacidade podem ser encaminhadas para contato@newcapitalfomento.com.br."],
         },
       ]}
     />

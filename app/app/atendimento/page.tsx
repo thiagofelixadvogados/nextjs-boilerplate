@@ -123,7 +123,7 @@ export default function AtendimentoPage() {
           <div className="space-y-3 p-6 text-sm">
             <div>
               <p className="text-muted">E-mail</p>
-              <p className="font-medium text-navy-900">contato@newcapital.com</p>
+              <p className="font-medium text-navy-900">contato@newcapitalfomento.com.br</p>
             </div>
             <div>
               <p className="text-muted">Horário de atendimento</p>
