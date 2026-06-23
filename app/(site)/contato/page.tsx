@@ -41,7 +41,7 @@ export default function Contato() {
               <div className="mt-4 space-y-3 text-sm">
                 <p className="text-navy-900"><strong>New Capital Fomento Mercantil Ltda.</strong></p>
                 <p className="text-muted">Factoring Premium · Antecipação de Recebíveis</p>
-                <p className="text-muted">contato@newcapital.com</p>
+                <p className="text-muted">contato@newcapitalfomento.com.br</p>
                 <p className="text-muted">Seg. a Sex., 9h às 18h</p>
                 <div className="border-t border-line pt-3 text-muted">
                   <p><strong className="text-navy-900">Matriz — Guaxupé/MG</strong><br />
