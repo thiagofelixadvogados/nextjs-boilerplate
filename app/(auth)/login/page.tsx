@@ -30,11 +30,6 @@ export default function LoginPage() {
     router.push(isAdmin ? "/admin" : "/app/dashboard");
   };
 
-  const fill = (e: string, p: string) => {
-    setEmail(e);
-    setPassword(p);
-  };
-
   return (
     <div>
       <h1 className="font-serif text-3xl font-semibold text-navy-900">Entrar</h1>
@@ -59,20 +54,6 @@ export default function LoginPage() {
         Não tem cadastro?{" "}
         <Link href="/cadastro" className="font-semibold text-navy-900 hover:underline">Criar agora</Link>
       </p>
-
-      <div className="mt-8 rounded-xl border border-line bg-white p-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">Acessos de demonstração</p>
-        <div className="mt-3 space-y-2 text-sm">
-          <button onClick={() => fill("cliente@empresa.com", "cliente123")} className="flex w-full items-center justify-between rounded-lg border border-line px-3 py-2 text-left hover:border-navy-600">
-            <span><strong className="text-navy-900">Cliente</strong> · cliente@empresa.com</span>
-            <span className="text-xs text-gold-600">usar →</span>
-          </button>
-          <button onClick={() => fill("admin@newcapital.com", "admin123")} className="flex w-full items-center justify-between rounded-lg border border-line px-3 py-2 text-left hover:border-navy-600">
-            <span><strong className="text-navy-900">Admin</strong> · admin@newcapital.com</span>
-            <span className="text-xs text-gold-600">usar →</span>
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
